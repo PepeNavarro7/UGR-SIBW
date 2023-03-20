@@ -1,0 +1,69 @@
+/* PAGINA ENTERA */
+body {
+    background-color:powderblue;
+}
+img {
+    width: 90%;
+    height: 90%;
+}
+/* HEADER, TITULO Y DEMAS */
+.cabecera {
+    background-color:aquamarine;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+}
+.titulo_y_menus{
+    display: grid;
+    grid-template-rows: 60% 20% 20%;  
+    margin-bottom: -3%;
+    margin-top: -3%;
+}
+.titulo{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 180%;
+}
+.menu{
+    display: grid;
+    grid-template-columns: 10% 10% 10%;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+
+/* CUERPO PRINCIPAL DE LA WEB*/
+.cuerpo{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+.grid_cientificos{
+    display: grid;
+    grid-template-columns: auto auto auto; /* 3 columnas */
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.459);
+    /*border: 1px solid rgba(0, 0, 0, 0.8);
+    
+    font-size: 30px;*/
+    padding: 10px;
+    text-align: center;
+    
+}
+.nombre_cientifico{
+    text-align: center;
+    margin-top: auto;
+}
+
+.lateral{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+}
