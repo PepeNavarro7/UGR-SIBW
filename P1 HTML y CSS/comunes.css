@@ -2,10 +2,6 @@
 body {
     background-color:powderblue;
 }
-img {
-    width: 90%;
-    height: 90%;
-}
 /* HEADER, TITULO Y DEMAS */
 .cabecera {
     background-color:aquamarine;
@@ -18,6 +14,8 @@ img {
 .logo{
     padding-left: 5%;
     margin-bottom: -5%;
+    width: 90%;
+    height: 90%;
 }
 .titulo_y_menus{
     display: grid;

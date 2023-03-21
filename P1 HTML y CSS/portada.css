@@ -17,6 +17,10 @@
     border-radius: 12px;
     padding: 3%;
 }
+.cara_cientifico{
+    width: 90%;
+    height: 90%;
+}
 .nombre_cientifico{
     text-align: center;
     margin-top: 3%;
