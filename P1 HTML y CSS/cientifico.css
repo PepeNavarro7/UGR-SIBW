@@ -12,7 +12,22 @@
 .info_extra{
     line-height: 80%;
 }
-.imagen_cientifico{
+.retrato_cientifico{
     float: right;
     margin-right: 5%;
+    text-align: center;
+    line-height: 0%;
+}
+.imagen_cientifico{
+    width: 80%;
+    height: 80%;
+}
+.social{
+   text-align: center;
+}
+.logo_social{
+    width: 100px;
+    height: 100px;
+    float: left;
+    padding-left: 5%;
 }
