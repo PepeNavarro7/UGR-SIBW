@@ -1,0 +1,18 @@
+.centro{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+    padding: 1%;
+}
+.nombre{
+    font-size: 200%;
+    margin-bottom: -2%;
+    margin-top: -2%;
+}
+.info_extra{
+    line-height: 80%;
+}
+.imagen_cientifico{
+    float: right;
+    margin-right: 5%;
+}
