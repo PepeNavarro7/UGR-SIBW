@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/comunes.css"> <!-- css de elementos comunes -->
     <link rel="stylesheet" href="css/cientifico.css"> <!-- css de los elementos del articulo -->
     <meta charset="utf-8" />
-    <script src="js/myScript.js"></script> <!-- javascript -->
     <link rel="stylesheet" href="css/comentarios.css"> <!-- css de los comentarios -->
 </head>
 
@@ -91,48 +90,65 @@
 
 </div>
 
-<div id="panelComentarios">
-    <button type="button"  id="closeComentarios" ></button>
+<div id="desplegable">
+    <div id="comentarios-submit-container">
+        <div id="submit-comentario">
+            <h4>Escribir comentario</h4>
+            <form>
+                <label>Nombre:
+                    <input type="text" class="ancho" id="nombre" placeholder="Nombre Apellidos">
+                </label>
 
-    <div class="comentarios">
-        <p>Holi</p>
-        <!--
-            <div class="comentario">
-                <div class="parte">
-                    <div>
-                        <div id="contenedorImgProfile"><img id="imgProfile" src="../img/profile.jpg"></div>
-                        <h1>{{ comentario['nombreAutor'] }}</h1>
-                    </div>
-                    {% if usuario['tipo'] != 'registrado' %}
-                        <div class="editar">
-                            <form  action="/evento.php" method="post">
-                                <input type="hidden" name="editarcomentario" value="{{ comentario['idComentario'] }}">
-                                <input type="hidden" name="idEvento" value="{{ evento['id'] }}">
-                                <input id="botonEditar" type="image" src="../img/editar.png">
-                            </form>
-                            <form  action="/evento.php" method="post">
-                                <input type="hidden" name="eliminarcomentario" value="{{ comentario['idComentario'] }}">
-                                <input type="hidden" name="idEvento" value="{{ evento['id'] }}">
-                                <input id="botonEliminar" type="image" src="../img/eliminar.png">
-                            </form>
-                        </div>
-                    {% endif %}
-                </div>
-                <div id="textoComentario">
-                    <p>{{ comentario['comentario'] }}</p>
-                </div>
-                <div class="parte">
-                    <h2>{{ comentario['fecha'] }}</h2>
-                    {% if comentario['modificado'] == 1 %}
-                        <h2>Mensaje editado por el moderador</h2>
-                    {% endif %}
-                </div>
+                <label>Correo: 
+                    <input type="email" class="ancho" id="email" placeholder="ejemplo@ejemplo.org">
+                </label>
+
+                <label>Comentario: 
+                    <textarea id="comentario-nuevo" placeholder="Introduzca el comentario"></textarea>
+                </label>
+                
+                <button type="button" id="submit">Submit</button>
+                <!--<input type="submit" id="submit">-->
+            </form>
+        </div>
+
+        <div class="comentario-container">
+            <div class="nombre-comentario">
+                <h4>Antonio Robles</h4>
             </div>
-        -->
-            
-    </div>   
-    
-</div>
+            <div class="comentario-email">
+                example@fakemail.com
+            </div>
+            <div class="fecha">
+                12 de mayo del 2021, 13:37
+            </div>
+            <div class="contenido-comentario">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat metus, pellentesque non libero ac, aliquam auctor odio. Pellentesque eu efficitur est. Donec facilisis tellus ac tellus fermentum, tempor tempor nulla posuere. Duis a arcu non orci suscipit eleifend. Maecenas malesuada sem et leo iaculis dapibus. Duis arcu erat, tempor vitae fermentum ac, convallis vel mauris. Sed lacinia quam nec rhoncus tempus.                    
+            </div>
+        </div>
+        <div class="comentario-container">
+            <div class="nombre-comentario">
+                <h4>Juan Hidalgo</h4>
+            </div>
+            <div class="comentario-email">
+                ejemplo@fakemail2.com
+            </div>                    
+            <div class="fecha">
+                6 de abril del 2020, 10:22
+            </div>
+            <div class="contenido-comentario">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam erat metus, pellentesque non libero ac, aliquam auctor odio. Pellentesque eu efficitur est. Donec facilisis tellus ac tellus fermentum, tempor tempor nulla posuere. Duis a arcu non orci suscipit eleifend. Maecenas malesuada sem et leo iaculis dapibus. Duis arcu erat, tempor vitae fermentum ac, convallis vel mauris. Sed lacinia quam nec rhoncus tempus.                    
+            </div>
+        </div>
+    </div>
+    <div id="menu-boton">
+        <form>
+            <button type="button" id="boton-comentario">
+                <img class="foto opaco-on-hover" src="static/image/comment.png"/>
+            </button>
+        </form>
+    </div>
+</div>     
 
 <!-- Pie de pagina con mi info -->
 <footer class="Pie"> 
@@ -142,6 +158,9 @@
     <p>Sistemas de Información Basados en Web</p>
 </footer> 
     
+ <!-- no me ha quedado muy claro por qué debe estar al final y no al principio -->
+ <script src="js/myScript.js"></script>
+
 </body>
 
 </html>
