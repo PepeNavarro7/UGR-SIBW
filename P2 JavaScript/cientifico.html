@@ -3,9 +3,11 @@
 
 <head>
     <title>Cientifico</title>
-    <link rel="stylesheet" href="comunes.css"> <!-- css de elementos comunes -->
-    <link rel="stylesheet" href="cientifico.css"> <!-- css de los elementos de la portada-->
+    <link rel="stylesheet" href="css/comunes.css"> <!-- css de elementos comunes -->
+    <link rel="stylesheet" href="css/cientifico.css"> <!-- css de los elementos del articulo -->
     <meta charset="utf-8" />
+    <script src="js/myScript.js"></script> <!-- javascript -->
+    <link rel="stylesheet" href="css/comentarios.css"> <!-- css de los comentarios -->
 </head>
 
 <body>
@@ -71,6 +73,9 @@
         <a href="cientifico_imprimir.html">
             <img src="imagenes/logo_imprimir.png" class="logo_social" alt="Imprimir">
         </a>
+        <button type="button" onclick="myFunction()">Comentarios</button>
+
+        <p id="cosi">Hola</p>
     </div>
 </article>
 
@@ -84,6 +89,49 @@
       </ul>
 </aside>
 
+</div>
+
+<div id="panelComentarios">
+    <button type="button"  id="closeComentarios" ></button>
+
+    <div class="comentarios">
+        <p>Holi</p>
+        <!--
+            <div class="comentario">
+                <div class="parte">
+                    <div>
+                        <div id="contenedorImgProfile"><img id="imgProfile" src="../img/profile.jpg"></div>
+                        <h1>{{ comentario['nombreAutor'] }}</h1>
+                    </div>
+                    {% if usuario['tipo'] != 'registrado' %}
+                        <div class="editar">
+                            <form  action="/evento.php" method="post">
+                                <input type="hidden" name="editarcomentario" value="{{ comentario['idComentario'] }}">
+                                <input type="hidden" name="idEvento" value="{{ evento['id'] }}">
+                                <input id="botonEditar" type="image" src="../img/editar.png">
+                            </form>
+                            <form  action="/evento.php" method="post">
+                                <input type="hidden" name="eliminarcomentario" value="{{ comentario['idComentario'] }}">
+                                <input type="hidden" name="idEvento" value="{{ evento['id'] }}">
+                                <input id="botonEliminar" type="image" src="../img/eliminar.png">
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+                <div id="textoComentario">
+                    <p>{{ comentario['comentario'] }}</p>
+                </div>
+                <div class="parte">
+                    <h2>{{ comentario['fecha'] }}</h2>
+                    {% if comentario['modificado'] == 1 %}
+                        <h2>Mensaje editado por el moderador</h2>
+                    {% endif %}
+                </div>
+            </div>
+        -->
+            
+    </div>   
+    
 </div>
 
 <!-- Pie de pagina con mi info -->
