@@ -1,30 +1,25 @@
 #desplegable{
-    /* La caja esta escondida a la izquierda, y sale */
+    /* El desplegable incluye a la caja de los comentarios y el boton */
     position:fixed;
     height: 100%;
     top: 0;
-    left: calc(-1 * min(700px, 65vw));
+    left: calc(-1 * min(600px, 55vw)); /* arreglamos el desplegable para que quede fuera de la pantalla */
     display: flex;
     z-index: 10;
 }
 
-#comentarios-submit-container{
-    width: min(700px, 65vw);
-    /*border: solid 1px black;*/
+#caja-comentarios{
+    width: min(600px, 55vw);
     display: grid;
     grid-auto-rows: max-content;
     grid-auto-columns: 100%;
     gap: 0.7vh;
     overflow: hidden auto;
-    /*background-color: rgba(255, 255, 255, 0.5);*/
     background-color: beige;
-    border-radius: 0.5vh;
-    /*box-shadow: 0;*/
 }
 
 
-#menu-boton{
-    /*border: solid 1px orange;*/
+.menu-boton{
     align-self: center;
 }
 
@@ -34,6 +29,7 @@
     border: 0;
 }
 
+/* Container generico de los comentarios */
 .comentario-container{
     border-radius: 0.5vh;
     border: solid 1px black;    
@@ -45,14 +41,15 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-h4{
+.nombre-comentario{
     text-align: center;
+    font-weight: bold;
     font-size: 120%;
-    margin: 2%;
+    margin: 1%;
 }
 
 .contenido-comentario{
-    padding: 20px;
+    padding: 10px;
     text-align: justify;
     background-color: white;
     border-bottom-left-radius: 0.5vh;
@@ -66,7 +63,7 @@ h4{
 
 .fecha{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 input{
@@ -91,14 +88,10 @@ button{
 
 .comentario-email{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
-.opaco-on-hover{
-    opacity: 0.7;
-    transition: 0.2s;
-}
-
-.opaco-on-hover:hover{
-    opacity: 1;
+.logo-comentarios{
+    /* con width% limitamos el tamaño al del container */
+    width: 120%;
 }
