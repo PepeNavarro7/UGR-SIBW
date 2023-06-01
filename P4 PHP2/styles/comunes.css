@@ -1,0 +1,62 @@
+/* PAGINA ENTERA */
+body {
+    background-color:powderblue;
+}
+/* HEADER, TITULO Y DEMAS */
+.cabecera {
+    background-color:aquamarine;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+}
+.logo{
+    padding-left: 5%;
+    margin-bottom: -5%;
+    width: 90%;
+    height: 90%;
+}
+.titulo_y_menus{
+    display: grid;
+    grid-template-rows: 60% 40%;  
+    margin-bottom: -3%;
+    margin-top: -3%;
+}
+.titulo{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 180%;
+}
+.menu{
+    display: grid;
+    grid-template-columns: 20% 10% 10% 10% 10%;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+
+
+/* Centro y lado */
+.cuerpo{
+    display: grid;
+    grid-template-columns: 80% 20%; /* la grid y el aside */
+}
+.lateral{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+    padding-left: 5%;
+}
+
+/* Pie de pagina */
+.Pie{
+    text-align: center;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+    padding-top: 1%;
+}
+.oculto{
+    visibility: hidden;
+    display: none;
+}

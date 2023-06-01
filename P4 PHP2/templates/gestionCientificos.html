@@ -1,0 +1,38 @@
+{% extends "padre.html" %}
+
+{% block head %}
+    {{ parent() }}
+    <title>Gestion de Comentarios</title>
+{% endblock %}
+
+{% block central %}
+<div>
+    <p>Para crear un nuevo cientifico <a href="aniadirCientifico.php">Haz click aqui</a></p>
+    <table class="tabla">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Foto</th>
+            <th>Nacimiento</th>
+            <th>Fechas</th>
+            <th>Operaciones</th>
+        </tr>
+        {%for i in 0..listaCientificos|length-1%}
+        <tr>
+            <td>{{listaCientificos[i]['idCf']}}</td>
+            <td><a href="cientifico.php?id={{listaCientificos[i]['idCf']}}">{{listaCientificos[i]['nombre']}}</a></td>
+            <td><img src="{{listaCientificos[i]['path_foto1']}}" width="30%"></td>
+            <td>{{listaCientificos[i]['lugar']}}</td>
+            <td>{{listaCientificos[i]['fecha']}}</td>
+            <td>
+                <a href="editarCientifico.php?id={{listaCientificos[i]['idCf']}}">Editar</a>
+                <form action="borrarCientifico.php" method="post">
+                    <input type="text" name="idCf" class="oculto" value="{{listaCientificos[i]['idCf']}}">
+                    <button type="submit">Borrar</button>
+                </form>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{% endblock %}

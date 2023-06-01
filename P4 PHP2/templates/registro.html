@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+
+{% block head %}
+    {{ parent() }}
+    <title>Registrarse </title>
+{% endblock %}
+
+{% block central %}
+<div>
+    <form action="register.php" method="post">
+        <p>Usuario: <input type="text" name="nick" class="inputs"></p>
+        <p>Email: <input type="text" name="email" class="inputs"></p>
+        <p>Contraseña: <input type="password" name="pass" class="inputs"></p>
+        <p><input type="submit" value="Registrate"></p>
+    </form>
+    <div class="relleno"></div>
+</div>
+{%endblock%}
