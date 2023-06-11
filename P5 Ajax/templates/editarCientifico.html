@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+
+{% block head %}
+    {{ parent() }}
+    <title>Editar un Cientifico</title>
+{% endblock %}
+
+{% block central %}
+<div>
+    <form action="editarCientifico.php" method="post">
+        <input type="text" name="idCientifico" value="{{cientifico['id']}}" class="oculto">
+        <p>Nombre: <input type="text" name="nombre" value="{{cientifico['nombre']}}"></p>
+        <p>Lugar de Nacimiento: <input type="text" name="lugar" value="{{cientifico['lugar']}}"></p>
+        <p>Fechas: <input type="text" name="fecha" value="{{cientifico['fecha']}}"></p>
+        <p>Path Foto1: <input type="text" name="path_foto1" value="{{cientifico['path_foto1']}}"></p>
+        <p>Pie Foto1: <input type="text" name="pie_foto1" value="{{cientifico['pie_foto1']}}"></p>
+        <p>Path Foto2: <input type="text" name="path_foto2" value="{{cientifico['path_foto2']}}"></p>
+        <p>Pie Foto 2: <input type="text" name="pie_foto2" value="{{cientifico['pie_foto2']}}"></p>
+        <textarea name="descripcion1" rows="15" cols="35">{{cientifico['descripcion1']}}</textarea>
+        <textarea name="descripcion2" rows="15" cols="35">{{cientifico['descripcion2']}}</textarea>
+        <p>Wikipedia: <input type="text" name="wikipedia" value="{{cientifico['wikipedia']}}"></p>
+        <p>Publicado(0/1): <input type="text" name="publicado" value="{{cientifico['publicado']}}"></p>
+        <button type="submit">Editar Cientifico</button>
+    </form>
+</div>
+{% endblock %}

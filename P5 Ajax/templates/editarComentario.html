@@ -1,0 +1,19 @@
+{% extends "padre.html" %}
+
+{% block head %}
+    {{ parent() }}
+    <title>Editar un comentario</title>
+{% endblock %}
+
+{% block central %}
+<div>
+    <p>Editando comentario de {{comment['nick']}}, escrito el {{comment['fecha']}} que decía:</p>
+    <p>{{comment['comentario']}}</p>
+
+    <form action="editarComentario.php" method="post">
+        <input type="text" name="idComentario" class="oculto" value="{{comment['idComentario']}}">        
+        <textarea name="texto">{{comment['Comentario']}}</textarea>
+        <button type="submit">Editar comentario</button>
+    </form>
+</div>
+{% endblock %}

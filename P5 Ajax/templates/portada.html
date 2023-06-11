@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+
+{% block head %}
+    {{ parent() }}
+    <title>Pagina principal</title>
+    <link rel="stylesheet" href="styles/portada.css"> <!-- css de los elementos de la portada-->
+{% endblock %}
+
+{% block central %}
+<!-- Grid principal con 3 columnas -->
+<div class="grid_cientificos">
+    {% for i in range(0,portada|length-1) %}
+        <div class="grid-item">
+            <a href="cientifico.php?id={{portada[i]['id']}}">
+                <img src="{{ portada[i]['path_foto1'] }}" class="cara_cientifico" alt="{{ portada[i]['nombre'] }}">
+            </a>
+            <p class="nombre_cientifico">{{ portada[i]['nombre'] }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+
+<head>
+  {% block head %}
+      <link rel="stylesheet" href="styles/comunes.css"> <!-- css de elementos comunes -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="js/busquedaAjax.js"></script>
+      <meta charset="utf-8" />
+  {% endblock %}
+</head>
+
+
+<body>
+
+{% block cabecera %}
+  <header class="cabecera">
+      <a href="index.php">
+        <img src="images/logo/negro borde blanco.png" class="logo" alt="logo" />
+      </a>
+      <div class="titulo_y_menus">
+          <div class="titulo">
+              <h1>CIENTÍFICOS DEL MUNDO</h1>
+          </div>
+          <div class="menu"> <!-- Quizá debería ser una lista, pero me gusta mas como queda así-->
+              {% if usuario == "Empty" %}
+              <p>No estas logueado</p>
+              <p><a href="login.php">Log in</a></p>
+              <p><a href="register.php">Registrarme</a></p>
+              {% else %}
+              <p>Hola, {{usuario.nick}} ({{usuario.tipo}})</p>
+              <p><a href="logout.php">Log out</a></p>
+              {% endif %}
+          </div>       
+      </div>
+  </header>
+{% endblock %}
+
+<div class="cuerpo">
+  {% block central %}
+  <p>Parte central de la plantilla.</p>
+  {% endblock %}
+
+  {% block lateral %}
+  <!-- Barra lateral a la que hemos dado el 20% del espacio -->
+  <aside class="lateral"> 
+      <div class="buscador">   
+        <input type="text" name="textobusqueda" id="busqueda" placeholder="Buscar..." autocomplete="off" oninput="peticionBusquedaAjax()">
+        <div id="resultados" style="display: none;">
+            Resultados:
+        </div>
+      </div> 
+      <p>Lista de enlaces utiles:</p>
+      <ul>
+      {% if usuario == "Empty" %}
+        <li>Enlace 1</li>
+        <li>Enlace 2</li>
+        <li>Enlace 3</li>
+      {% else %}
+        <li><a href="perfil.php">Modificar mis datos</a></li>
+        {% if usuario.tipo == "Moderador" or usuario.tipo == "Superusuario" %}
+        <li><a href="gestionComentarios.php">Gestion de comentarios</a></li>
+        {% endif %}
+        {% if usuario.tipo == "Gestor" or usuario.tipo == "Superusuario" %}
+        <li><a href="gestionCientificos.php">Gestion de Cientificos</a></li>
+        {% endif %}
+        {% if usuario.tipo == "Superusuario" %}
+        <li><a href="gestionUsuarios.php">Gestion de usuarios</a></li>
+        {% endif %}
+      {% endif %} 
+      </ul>
+  </aside>
+  {% endblock %}
+</div>
+
+{% block extra %}
+{% endblock %}
+
+{% block footer %}
+  <!-- Pie de pagina con mi info -->
+  <footer class="Pie"> 
+      <address>
+          José Manuel Navarro Cuartero
+      </address>
+      <p>Sistemas de Información Basados en Web</p>
+  </footer> 
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+    
+</body>
+
+</html>

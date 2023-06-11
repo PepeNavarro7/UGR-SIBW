@@ -1,0 +1,50 @@
+{% extends "padre.html" %}
+
+{% block head %}
+    {{ parent() }}
+    <title>Crear Cientifico</title>
+{% endblock %}
+
+{% block central %}
+<div class="formulario">
+    {% for e in errores %}
+        <p>{{e}}</p>
+    {% endfor %}
+
+    <h3>Crear un nuevo cientifico</h3>
+    <!-- importante el multipart/form-data -->
+    <form action="aniadirCientifico.php" method="post" enctype="multipart/form-data">
+
+        <p>Nombre del cientifico</p>
+        <input type="text" name="nombre">
+
+        <p>Nacimiento y muerte</p>
+        <input type="text" name="fecha">
+
+        <p>Lugar de nacimiento</p>
+        <input type="text" name="lugar">
+
+        <p>Un poco de informacion</p>
+        <textarea name="descripcion1" cols="45" rows="15"></textarea>
+        <textarea name="descripcion2" cols="45" rows="15"></textarea>
+
+        <p>Página de wikipedia</p>
+        <input type="text" name="wikipedia">
+        <hr>
+
+        <h4>Imágenes</h4>
+        <p>Imagen 1</p>
+        <input type="file" name="path_foto1" />
+        <p>Pie 1</p>
+        <input type="text" name="pie_foto1">
+        <p>Imagen 2</p>
+        <input type="file" name="path_foto2" />
+        <p>Pie 2</p>
+        <input type="text" name="pie_foto2">
+        <hr>
+        <h4>Hastags</h4> <!-- No tengo muy claro qué hacer con los hashtags-->
+        <input type="text" name="etiquetas">
+        <button type="submit">Crear Cientifico/a</button>
+    </form>
+</div>
+{%endblock%}

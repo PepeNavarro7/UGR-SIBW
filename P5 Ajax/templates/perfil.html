@@ -1,0 +1,29 @@
+{% extends "padre.html" %}
+
+{% block head %}
+    {{ parent() }}
+    <title>Perfil</title>
+{% endblock %}
+
+{% block central %}
+<div>
+    {% if error == 1 %}
+    <p>¡Revisa haber rellenado todos los campos!</p>
+    {% endif %}
+    <div>
+        <h3>Datos actuales:</h3>
+        <p>Nick: {{usuario.nick}}</p>
+        <p>Email: {{usuario.email}}</p>
+        <p>Tipo: {{usuario.tipo}}</p>
+    </div>
+    <div>
+        <h3>Cambio de datos</h3>
+        <form action="perfil.php" method="post">
+            <p>Nuevo nick: <input type="text" name="newnick" class="inputs"></p>
+            <p>Nuevo email: <input type="text" name="newemail" class="inputs"></p>        
+            <p>Nueva contraseña: <input type="password" name="newpass"></p>
+            <p><input type="submit" value="Modificar datos"></p>
+        </form>
+    </div>
+</div>
+{%endblock%}

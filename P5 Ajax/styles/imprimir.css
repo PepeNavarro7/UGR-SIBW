@@ -1,0 +1,70 @@
+/* PAGINA ENTERA */
+body {
+    background-color:white;
+}
+/* HEADER, TITULO Y DEMAS */
+.cabecera {
+    /*display: grid;
+    grid-template-columns: 20% 80%;*/
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+    padding: 1%;
+}
+.logo{
+    padding-right: 8%;
+    margin-top: -0.75%;
+    width: 180px;
+    height: 90px;
+    float: right;
+}
+.titulo_y_menus{
+    display: grid;
+    grid-template-rows: 60% 20% 20%;  
+    margin-bottom: -3%;
+    margin-top: -3%;
+}
+.titulo{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 180%;
+}
+.menu{
+    display: none;
+}
+
+.lateral{
+    display: none;
+}
+
+/* Pie de pagina */
+.Pie{
+    text-align: center;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+    padding-top: 1%;
+}
+.centro{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    margin: 5px;
+    padding: 1%;
+}
+.nombre{
+    font-size: 200%;
+    margin-bottom: -2%;
+    margin-top: -2%;
+}
+.info_extra{
+    line-height: 80%;
+}
+.retrato_cientifico{
+    display: none;
+}
+.social{
+   display: none;
+}
+#desplegable{
+    display: none;
+}
